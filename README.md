@@ -26,30 +26,33 @@
 
 目前内置了几个基本命令，包含：
 
+```
 1）help，显示帮助信息，区分普通用户和管理员
-
 2）myopenid，获取当前用户在当前公众号的OPENID
-
 3）seccode，获取Wordpress后台登录验证码
+```
 
 添加新的命令只需两步：
 
 1）在Command目录创建命令文件，格式为
 
-​	管理员命令格式：admin_命令名称.php
-
-​	普通用户命令格式：user_命令名称.php
+```
+管理员命令格式：admin_命令名称.php
+普通用户命令格式：user_命令名称.php
+```
 
 2）修改config.php文件中的$command参数
 
 配置参考如下：
 
-`[
-​		"backup"=>["isadmin"=>1,"desc"=>"备份博客网站和数据库","short"=>["bk"]],
-​		"help"=>["isadmin"=>0,"desc"=>"获取命令帮助信息","short"=>["h"]],
-​		"myopenid"=>["isadmin"=>0,"desc"=>"获取您在这里的唯一编号","short"=>["id"]],
-​		"seccode"=>["isadmin"=>0,"desc"=>"获取Wordpress博客后台登录验证码","short"=>["code"]],
-​	];`
+```php
+[
+    "backup"=>["isadmin"=>1,"desc"=>"备份博客网站和数据库","short"=>["bk"]],
+    "help"=>["isadmin"=>0,"desc"=>"获取命令帮助信息","short"=>["h"]],
+    "myopenid"=>["isadmin"=>0,"desc"=>"获取您在这里的唯一编号","short"=>["id"]],
+    "seccode"=>["isadmin"=>0,"desc"=>"获取Wordpress博客后台登录验证码","short"=>["code"]],
+];
+```
 
 数组键值是对应着Command目录下的文件名，比如backup命令的Command文件名称为：admin_backup.php
 
@@ -60,6 +63,7 @@ short为当前命令可用的短命令，便于快速输入和使用。
 **查看demo**
 
 可以关注我部署的订阅号：
+![](https://ws4.sinaimg.cn/large/62831495gy1fvxr0cqhknj2076076aaj.jpg)
 
-![](E:\My Documents\桌面\qrcode_for_gh_588b858ce396_258.jpg)
+
 
